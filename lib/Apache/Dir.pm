@@ -2,7 +2,7 @@ package Apache::Dir;
 
 use Apache::Constants qw(DECLINED DIR_MAGIC_TYPE HTTP_MOVED_PERMANENTLY);
 
-$Apache::Dir::VERSION = '0.02';
+$Apache::Dir::VERSION = '0.03';
 
 sub handler {
     my $r = shift;

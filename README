@@ -1,4 +1,4 @@
-Apache/Dir version 0.02
+Apache/Dir version 0.03
 =======================
 
     This simple module is designed to be a partial replacement for the
@@ -16,10 +16,21 @@ Apache/Dir version 0.02
     What really should happen is that a request for /foo will be redirected
     to /foo/ before Mason ever sees it.
 
-    This is the problem that this module is designed to address. Thanks to
-    mod_perl's ability to stack handlers, you can just make sure that
-    Apache::Dir handles requests before Mason does. Configuration would
-    then look something like this:
+    This is the problem that this module is designed to address.
+    Configuration would then look something like this:
+
+      <Location /foo>
+        PerlSetVar       MasonDeclineDirs 0
+        PerlModule       Apache::Dir
+        PerlModule       HTML::Mason::ApacheHandler
+        SetHandler       perl-script
+        PerlFixupHandler Apache::Dir
+        PerlHandler      HTML::Mason::ApacheHandler
+      </Location>
+
+    Apache::Dir can also be configured to handle the request during the
+    response cycle, if you wish. Just specify it before any other Perl
+    handler to have it execute first:
 
       <Location /foo>
         PerlSetVar  MasonDeclineDirs 0
