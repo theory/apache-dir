@@ -3,8 +3,9 @@ Revision history for Perl extension Apache::Dir.
 0.02  
       - Switched from stat'ing a directory to just checking the content type
         for DIR_MAGIC_TYPE. Suggested by Geoffrey Young.
-      - Documentation now suggest using Apache::Dir as a fixup handler.
+      - Documentation now suggests using Apache::Dir as a fixup handler.
+      - Now requiring mod_perl in Build.PL.
+      - Added simple tests using Apache::FakeRequest.
 
 0.01  Tue May 11 12:23:04 2004
       - Initial public release
-

@@ -4,10 +4,9 @@ use Apache::Constants qw(DECLINED DIR_MAGIC_TYPE HTTP_MOVED_PERMANENTLY);
 
 $Apache::Dir::VERSION = '0.02';
 
-
 sub handler {
     my $r = shift;
-    return DECLINED unless $r->content_type == DIR_MAGIC_TYPE
+    return DECLINED unless $r->content_type eq DIR_MAGIC_TYPE
       && $r->uri !~ m{/$};
     my $args = $r->args;
     $r->header_out(Location => $r->uri . '/' . ($args ? "?$args" : ''));
@@ -43,10 +42,8 @@ will respond. This can wreak havoc if you use relative URLs in the
 C<dhandler>. What really should happen is that a request for F</foo> will be
 redirected to F</foo/> before Mason ever sees it.
 
-This is the problem that this module is designed to address. Thanks to
-C<mod_perl>'s ability to stack handlers, you can just make sure that
-Apache::Dir handles requests before Mason does. Configuration would then look
-something like this:
+This is the problem that this module is designed to address. Configuration
+would then look something like this:
 
   <Location /foo>
     PerlSetVar       MasonDeclineDirs 0
