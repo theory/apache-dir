@@ -1,12 +1,14 @@
 --- #YAML:1.0
 name: Apache-Dir
-version: 0.01
+version: 0.02
 author:
   - David Wheeler, E<lt>david@kineticode.comE<gt>
 abstract: Simple Perl Version of mod_dir
 license: perl
+requires:
+  mod_perl: 0
 provides:
   Apache::Dir:
     file: lib/Apache/Dir.pm
-    version: 0.01
+    version: 0.02
 generated_by: Module::Build version 0.25
