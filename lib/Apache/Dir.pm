@@ -66,6 +66,10 @@ execute first:
     PerlHandler Apache::Dir HTML::Mason::ApacheHandler
   </Location>
 
+=head1 BUGS
+
+Please send bug reports to <bug-apache-dir@rt.cpan.org>.
+
 =head1 AUTHOR
 
 David Wheeler, E<lt>david@kineticode.comE<gt>
