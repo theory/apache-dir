@@ -6,7 +6,8 @@ Revision history for Perl extension Apache::Dir.
       - Documentation now suggests using Apache::Dir as a fixup handler.
       - Now requiring mod_perl in Build.PL.
       - Added simple tests using Apache::FakeRequest.
-      - Released to CPAN.
+      - Released to CPAN, with thanks to Doug McEachern for assigning the
+        namespace to me.
 
 0.01  2004-05-11T12:23:04
       - Initial release, mail list only.
