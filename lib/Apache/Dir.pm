@@ -1,13 +1,14 @@
 package Apache::Dir;
 
-use Apache::Constants qw(DECLINED HTTP_MOVED_PERMANENTLY);
+use Apache::Constants qw(DECLINED DIR_MAGIC_TYPE HTTP_MOVED_PERMANENTLY);
 
-$Apache::Dir::VERSION = '0.01';
+$Apache::Dir::VERSION = '0.02';
 
 
 sub handler {
     my $r = shift;
-    return DECLINED unless -d $r->filename && $r->uri !~ m{/$};
+    return DECLINED unless $r->content_type == DIR_MAGIC_TYPE
+      && $r->uri !~ m{/$};
     my $args = $r->args;
     $r->header_out(Location => $r->uri . '/' . ($args ? "?$args" : ''));
     return HTTP_MOVED_PERMANENTLY;
@@ -23,8 +24,7 @@ Apache::Dir - Simple Perl Version of mod_dir
 =head1 SYNOPSIS
 
   PerlModule Apache::Dir
-  SetHandler perl-script
-  PerlHandler Apache::Dir
+  PerlFixupHandler Apache::Dir
 
 =head1 DESCRIPTION
 
@@ -47,6 +47,19 @@ This is the problem that this module is designed to address. Thanks to
 C<mod_perl>'s ability to stack handlers, you can just make sure that
 Apache::Dir handles requests before Mason does. Configuration would then look
 something like this:
+
+  <Location /foo>
+    PerlSetVar       MasonDeclineDirs 0
+    PerlModule       Apache::Dir
+    PerlModule       HTML::Mason::ApacheHandler
+    SetHandler       perl-script
+    PerlFixupHandler Apache::Dir
+    PerlHandler      HTML::Mason::ApacheHandler
+  </Location>
+
+Apache::Dir can also be configured to handle the request during the response
+cycle, if you wish. Just specify it before any other Perl handler to have it
+execute first:
 
   <Location /foo>
     PerlSetVar  MasonDeclineDirs 0
