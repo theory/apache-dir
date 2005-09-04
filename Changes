@@ -1,5 +1,11 @@
 Revision history for Perl extension Apache::Dir.
 
+0.04
+      - Switched to manually defining constants so as to support compatibility
+        with mod_perl 2.
+      - Eleminated "Subroutine Apache::FakeRequest::header_out redefined"
+        warning in tests.
+
 0.03  2004-05-18T23:54:20
       - Updated README to reflect use if Apache::Dir as a Fixup Handler.
 

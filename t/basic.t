@@ -1,16 +1,20 @@
-#!perl -w
+#!/usr/bin/perl -w
 
 use strict;
 use Test::More tests => 9;
 use Apache::FakeRequest;
-use Apache::Constants qw(DECLINED DIR_MAGIC_TYPE HTTP_MOVED_PERMANENTLY);
 
-sub Apache::Constants::DIR_MAGIC_TYPE () { 'httpd/unix-directory' }
-sub Apache::Constants::HTTP_MOVED_PERMANENTLY ()  { 301 }
-sub Apache::FakeRequest::header_out { shift->{header_out} = \@_ }
+use constant DECLINED               => -1;
+use constant DIR_MAGIC_TYPE         => 'httpd/unix-directory';
+use constant HTTP_MOVED_PERMANENTLY => 301;
 
-BEGIN { use_ok 'Apache::Dir' }
+{
+    package Apache::FakeRequest;
+    no warnings 'redefine';
+    sub header_out { shift->{header_out} = \@_ }
+}
 
+BEGIN { use_ok 'Apache::Dir' or die }
 
 my $req = Apache::FakeRequest->new(
     uri => '/foo/',

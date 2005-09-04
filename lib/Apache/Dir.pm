@@ -1,13 +1,16 @@
 package Apache::Dir;
 
-use Apache::Constants qw(DECLINED DIR_MAGIC_TYPE HTTP_MOVED_PERMANENTLY);
+$Apache::Dir::VERSION = '0.04';
 
-$Apache::Dir::VERSION = '0.03';
+# Define constants for compatibility with mod_perl 1 and mod_perl 2.
+use constant DECLINED               => -1;
+use constant DIR_MAGIC_TYPE         => 'httpd/unix-directory';
+use constant HTTP_MOVED_PERMANENTLY => 301;
 
 sub handler {
     my $r = shift;
     return DECLINED unless $r->content_type eq DIR_MAGIC_TYPE
-      && $r->uri !~ m{/$};
+        && $r->uri !~ m{/$};
     my $args = $r->args;
     $r->header_out(Location => $r->uri . '/' . ($args ? "?$args" : ''));
     return HTTP_MOVED_PERMANENTLY;
