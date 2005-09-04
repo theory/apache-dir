@@ -1,5 +1,7 @@
 Revision history for Perl extension Apache::Dir.
 
+0.05
+
 0.04  2005-09-04T22:10:36
       - Switched to manually defining constants so as to support compatibility
         with mod_perl 2.
