@@ -79,7 +79,7 @@ David Wheeler, E<lt>david@kineticode.comE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2004 by David Wheeler
+Copyright 2004-2005 by David Wheeler
 
 This library is free software; you can redistribute it and/or modify it under
 the same terms as Perl itself.
