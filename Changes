@@ -1,6 +1,6 @@
 Revision history for Perl extension Apache::Dir.
 
-0.05
+0.05 2008-05-05T03:39:28
      - Added the "configure_requires", "build_requires", and "recommends"
        parameters to Build.PL.
      - Rejiggered the POD test to take advantage of Test::Pod 1.20 or later.
