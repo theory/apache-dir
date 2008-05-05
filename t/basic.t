@@ -2,7 +2,6 @@
 
 use strict;
 use Test::More tests => 9;
-use Apache::FakeRequest;
 
 use constant DECLINED               => -1;
 use constant DIR_MAGIC_TYPE         => 'httpd/unix-directory';
@@ -11,7 +10,14 @@ use constant HTTP_MOVED_PERMANENTLY => 301;
 {
     package Apache::FakeRequest;
     no warnings 'redefine';
-    sub header_out { shift->{header_out} = \@_ }
+    sub new {
+        my $class = shift;
+        bless { @_ } => $class;
+    }
+    sub header_out   { shift->{header_out} = \@_ }
+    sub content_type { shift->{content_type}     }
+    sub uri          { shift->{uri}              }
+    sub args         { shift->{args}             }
 }
 
 BEGIN { use_ok 'Apache::Dir' or die }

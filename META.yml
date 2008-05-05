@@ -1,14 +1,25 @@
 ---
 name: Apache-Dir
-version: 0.04
+version: 0.05
 author:
-  - 'David Wheeler, E<lt>david@kineticode.comE<gt>'
+  - 'David Wheeler, <david@kineticode.com>'
 abstract: Simple Perl Version of mod_dir
 license: perl
-requires:
+resources:
+  license: http://dev.perl.org/licenses/
+configure_requires:
+  Module::Build: 0.2701
+build_requires:
+  Module::Build: 0.2701
+  Test::More: 0.17
+recommends:
+  Test::Pod: 1.20
   mod_perl: 0
 provides:
   Apache::Dir:
     file: lib/Apache/Dir.pm
-    version: 0.04
-generated_by: Module::Build version 0.2702
+    version: 0.05
+generated_by: Module::Build version 0.280801
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.2.html
+  version: 1.2
