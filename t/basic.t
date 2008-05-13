@@ -14,10 +14,13 @@ use constant HTTP_MOVED_PERMANENTLY => 301;
         my $class = shift;
         bless { @_ } => $class;
     }
-    sub header_out   { shift->{header_out} = \@_ }
     sub content_type { shift->{content_type}     }
     sub uri          { shift->{uri}              }
     sub args         { shift->{args}             }
+    sub header_out   {
+        my $self = shift;
+        $self->{header_out} = \@_;
+    }
 }
 
 BEGIN { use_ok 'Apache::Dir' or die }

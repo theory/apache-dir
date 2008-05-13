@@ -1,6 +1,8 @@
 Revision history for Perl extension Apache::Dir.
 
 0.06
+     - Updated POD test to take advantage of Test::Pod 1.20.
+     - Fixed failing tests on Perl 5.5, with thanks to Slaven Rezic.
 
 0.05 2008-05-05T03:39:28
      - Added the "configure_requires", "build_requires", and "recommends"
