@@ -14,12 +14,12 @@ use constant HTTP_MOVED_PERMANENTLY => 301;
         my $class = shift;
         bless { @_ } => $class;
     }
-    sub content_type { shift->{content_type}     }
-    sub uri          { shift->{uri}              }
-    sub args         { shift->{args}             }
+    sub content_type { shift->{content_type}      }
+    sub uri          { shift->{uri}               }
+    sub args         { shift->{args}              }
     sub header_out   {
         my $self = shift;
-        $self->{header_out} = \@_;
+        $self->{header_out} = [@_];
     }
 }
 
