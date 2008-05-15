@@ -1,6 +1,6 @@
 package Apache::Dir;
 
-$Apache::Dir::VERSION = '0.06';
+$Apache::Dir::VERSION = '0.07';
 
 # Define constants for compatibility with mod_perl 1 and mod_perl 2.
 use constant DECLINED               => -1;
