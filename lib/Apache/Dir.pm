@@ -19,16 +19,16 @@ sub handler {
 1;
 __END__
 
-=head1 NAME
+=head1 Name
 
 Apache::Dir - Simple Perl Version of mod_dir
 
-=head1 SYNOPSIS
+=head1 Synopsis
 
   PerlModule Apache::Dir
   PerlFixupHandler Apache::Dir
 
-=head1 DESCRIPTION
+=head1 Description
 
 This simple module is designed to be a partial replacement for the standard
 Apache C<mod_dir> module. One of the things that module does is to redirect
@@ -69,7 +69,7 @@ execute first:
     PerlHandler Apache::Dir HTML::Mason::ApacheHandler
   </Location>
 
-=head1 SUPPORT
+=head1 Support
 
 This module is stored in an open L<GitHub
 repository|http://github.com/theory/apache-dir/tree/>. Feel free to fork and
@@ -79,13 +79,13 @@ Please file bug reports via L<GitHub
 Issues|http://github.com/theory/apache-dir/issues/> or by sending mail to
 L<bug-Apache-Dir@rt.cpan.org|mailto:bug-Apache-Dir@rt.cpan.org>.
 
-=head1 AUTHOR
+=head1 Author
 
 David Wheeler, <david@kineticode.com>
 
-=head1 COPYRIGHT AND LICENSE
+=head1 Copyright and License
 
-Copyright 2004-2008 by David Wheeler. Some Rights Reserved.
+Copyright 2004-2011 by David E. Wheeler. Some Rights Reserved.
 
 This library is free software; you can redistribute it and/or modify it under
 the same terms as Perl itself.
