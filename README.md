@@ -47,7 +47,7 @@ Dependencies
 Author
 ------
 
-David E. Wheeler, <david@kineticode.com>
+David E. Wheeler <david@justatheory.com>
 
 Copyright and License
 ---------------------

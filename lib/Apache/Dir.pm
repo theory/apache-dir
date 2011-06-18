@@ -38,7 +38,7 @@ response phase, if you use a Perl handler, it won't run. This can be
 problematic if the Perl handler doesn't likewise take the directory
 redirecting into account.
 
-A good example is HTML::Mason. If you've disabled Mason's C<decline_dirs>
+A good example is L<HTML::Mason>. If you've disabled Mason's C<decline_dirs>
 parameter (C<MasonDeclineDirs 0> in F<httpd.conf>), and there's a F<dhandler>
 in the directory F</foo>, then for a request for F</foo>, F</foo/dhandler>
 will respond. This can wreak havoc if you use relative URLs in the
@@ -81,7 +81,7 @@ L<bug-Apache-Dir@rt.cpan.org|mailto:bug-Apache-Dir@rt.cpan.org>.
 
 =head1 Author
 
-David Wheeler, <david@kineticode.com>
+David E. Wheeler <david@justatheory.com>
 
 =head1 Copyright and License
 
