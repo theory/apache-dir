@@ -57,7 +57,4 @@ is( Apache::Dir::handler($req), HTTP_MOVED_PERMANENTLY, "Check invalid URI with 
 is( $req->{header_out}[0], 'Location', "Check for Location header");
 is( $req->{header_out}[1], "/foo/?$args", "Check Location header value");
 
-
-
-
 __END__
