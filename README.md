@@ -1,4 +1,4 @@
-Apache/Dir version 0.07
+Apache/Dir version 0.08
 =======================
 
 This simple module is designed to be a partial replacement for the standard
