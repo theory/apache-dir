@@ -5,4 +5,6 @@
 \.bak$
 ^MANIFEST\.SKIP$
 ^Apache-Dir
-\.svn
+\.git
+^MYMETA\.yml$
+^MYMETA\.json$
