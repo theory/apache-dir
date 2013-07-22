@@ -39,10 +39,17 @@ execute first:
       PerlHandler Apache::Dir HTML::Mason::ApacheHandler
     </Location>
 
-Dependencies
+Installation
 ------------
 
-    mod_perl
+[![Build Status](https://travis-ci.org/theory/apache-dir.png)](https://travis-ci.org/theory/apache-dir)
+
+To install this module, type the following:
+
+    perl Build.PL
+    ./Build
+    ./Build test
+    ./Build install
 
 Author
 ------
